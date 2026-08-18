@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ჩემი საიტი</title>
-<style>
-body {
-font-family: sans-serif;
-background-color: #121212;
-color: #ffffff;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-margin: 0;
-text-align: center;
-}
-.card {
-background: #1e1e1e;
-padding: 30px;
-border-radius: 15px;
-box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-margin: 20px;
-}
-h1 { color: #4da6ff; }
-p { color: #aaa; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ვრაპ მასტერის ბონუსი</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            max-width: 380px;
+            width: 100%;
+            cursor: pointer;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .card:active {
+            transform: scale(0.98);
+        }
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #3b82f6;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        .hint {
+            font-size: 14px;
+            color: #888888;
+            background-color: #262626;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        .amount-box {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333333;
+        }
+        .amount {
+            font-size: 40px;
+            font-weight: 800;
+            color: #10b981;
+        }
+    </style>
 </head>
 <body>
-<div class="card">
-<h1>გამარჯობა! 📱</h1>
-<p>ეს საიტი აწყობილია ტელეფონით და ატვირთულია GitHub-ზე.</p>
-</div>
+
+    <div class="card" onclick="showBonus()">
+        <div class="title">ვრაპ მასტერი თქვენ გადმოგცემთ ბონუსს</div>
+        <div class="hint" id="hint-text">👆 დააჭირეთ სანახავად</div>
+        
+        <div class="amount-box" id="bonus-box">
+            <div class="amount">🎁 500 ლარი</div>
+        </div>
+    </div>
+
+    <script>
+        function showBonus() {
+            document.getElementById('bonus-box').style.display = 'block';
+            document.getElementById('hint-text').style.display = 'none';
+        }
+    </script>
+
 </body>
 </html>
