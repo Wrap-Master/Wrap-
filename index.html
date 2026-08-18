@@ -22,7 +22,7 @@
         }
         .card {
             background-color: #1e1e1e;
-            padding: 35px 25px;
+            padding: 25px;
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
@@ -50,16 +50,24 @@
             padding: 8px 16px;
             border-radius: 20px;
         }
-        .amount-box {
+        .bonus-content {
             display: none;
             margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid #333333;
         }
         .amount {
-            font-size: 40px;
+            font-size: 36px;
             font-weight: 800;
             color: #10b981;
+            margin-bottom: 15px;
+        }
+        .bonus-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -69,8 +77,14 @@
         <div class="title">ვრაპ მასტერი თქვენ გადმოგცემთ ბონუსს</div>
         <div class="hint" id="hint-text">👆 დააჭირეთ სანახავად</div>
         
-        <div class="amount-box" id="bonus-box">
+        <div class="bonus-content" id="bonus-box">
+            <!-- ლოგო / ფოტო -->
+            <img src="LOGO NE.jpeg" alt="Logo" class="bonus-img">
+            
             <div class="amount">🎁 500 ლარი</div>
+
+            <!-- მუსიკა -->
+            <audio id="myAudio" src="Tokyo Drift - EVELYN.mp3"></audio>
         </div>
     </div>
 
@@ -78,6 +92,10 @@
         function showBonus() {
             document.getElementById('bonus-box').style.display = 'block';
             document.getElementById('hint-text').style.display = 'none';
+            
+            // დაჭერისას მუსიკის ჩართვა
+            var audio = document.getElementById('myAudio');
+            audio.play();
         }
     </script>
 
